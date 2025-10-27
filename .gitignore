@@ -14,7 +14,7 @@
 **/* - Copy/
 *Shortcut.???
 *desktop.ini
-*_Override.ini
+#*_Override.ini  # I want to backup and version control my config, is kinda the whole point here.
 Layouts/**/*ImgGen_*
 *PKL.exe
 EPKL_*xecutable*.zip
