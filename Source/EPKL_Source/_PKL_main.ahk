@@ -17,6 +17,24 @@ HOLD: Thoughts and suggestions that weren't that good after all, or currently in
 ;;  ================================================================================================================================================
 ;;  eD WIPs/2FIX:
 
+TODO: In addition to OSM, OWS: One-Word Shift. It's seemingly quite popular with the QMK/ZMK crowd.
+	- This one's not on a timer but sets a state that's annulled by Esc or any end-of-word key.
+	- This means whitespace (Space, Enter, Tab etc) and punctuation – which needs to be de-shifted in time, too.
+
+2FIX: Unmapped DK entries shouldn't produce an unprintable char on layout images.
+
+2FIX: The base1 entry ought to be used when double-tapping a DK. Instead, the entry for space takes precedence.
+	- Something is very fishy about the DK code. It does detect a double tap, but somehow loops back and sends the space entry instead?
+		- Is it related to pkl_CheckForDKs() somehow? Is it because a space is sent there, causing the release char to become a space?
+	- Ext-tap twice outputs four spaces (the output for Spc). It might be better to make it cancel the DK.
+	- The CoDeKey sends repeated space entries when held down. Is this desirable? Could we specify no output by default for a DK?
+
+WIPs: Could the CoDeKey cancel itself when pressed again? Or something else?
+	- Making the Space entry nothing (or clear OSM or whatever) is a temporary fix.
+
+2FIX: U#### doesn't compose Unicode points anymore? How come?
+	- Checked: I wasn't using a VK-number BaseLayout at the time. Also, the compose key `1234` composes fine.
+
 WIPs: When I've got ortho images and Kyrillic variant updates in place, I could make a new, self-signed(?!?) release 1-4-3.
 
 NEXT: Bg update according to Kharlamov: Lose duplicate ъ (one on y and one on =+)
@@ -49,6 +67,8 @@ WIPs: Learn to digitally sign the release .exe, if that can help with OS warning
 		- https://www.pantaray.com/signcode.html (download link didn't work, but good explanation)
 		- https://learn.microsoft.com/en-us/powershell/module/pki/new-selfsignedcertificate?view=windowsserver2025-ps
 	- Running (#r) `certmgr.exe` lets you view certificates.
+
+TODO: QMK's repeat key can repeat actions such as Ctrl+Shift+Left to select multiple words. Would that be useful in EPKL?
 
 NEXT: Caps Word? It seems to be a popular ZMK/QMK feature.
 	- It's a one-shot kind of thing. Make it a special output? Would need a special function/state to keep it on until the next space.
@@ -92,16 +112,9 @@ NEXT: Send fn() antics study. Can we make a SendInput call separate of the Key e
 			DllCall("SendInput", "UInt", cInputs, "Ptr", inputs, "Int", cbSize)
 		}
 
-NEXT: Should a stickyTime of 0 make sticky keys work like on Windows, without a timer?
-	- Or maybe with a very long timer instead, for simplicity but also robustness (Shift isn't stuck on forever)...?
-
-2FIX: Ext-tap twice outputs four spaces. It might be better to make it cancel the DK (Esc?)!
-	- At the moment, it's linked to the output for < > (Space).
-	- Do we have a separate entry for DK double-taps? Yes, the `base1` mapping should be it. But it isn't working?
-
 2FIX: HIG: Yellow marks for combining accents etc aren't working anymore?
 
-2FIX: The Shift key is often lost now, forcing a refresh? Only for Ext-Shift?
+2FIX: The Shift key was often lost for a time, forcing a refresh? Only for Ext-Shift?
 	- Could it be because some key combos change system layout now? (How?)
 	- I also keep losing Ext Ctrl+Tab? What gives?
 
@@ -116,9 +129,8 @@ NEXT: Detect OS VK codes for all keys instead of just a select subset, so OS lay
 
 NEXT: With SC remaps, can we now actually remap the System layout? For instance, passthrough the OS layout but add AngleWideSym to it?!?
 	- No, doesn't work; the SC don't get remapped at all. Ah well.
-	- Consider which System mods to support. It may not make sense to add Curl there? But I want the right Extend etc.
+	- Consider which System mods to support. It may not make sense to add Curl there? But I want the right Extend etc when using mods.
 
-WIPs: The CoDeKey sends repeated spaces when held down. Is this desirable? Could we specify no output by default for a DK?
 WIPs: Ensure PrtScn is sent right for the CoDeKey and other DKs. Need PrtScn (all active windows), Alt+PrtScn (active window) and Win+PrtScn (full screen)
 
 WIPs: Check out https://www.autohotkey.com/boards/viewtopic.php?f=6&t=77668&sid=15853dc42db4a0cc45ec7f6ce059c2dc about image flicker.
@@ -128,11 +140,6 @@ WIPs: Check out https://www.autohotkey.com/boards/viewtopic.php?f=6&t=77668&sid=
 WIPs: Introduce the marvelous Compose key in the README! Need more documentation on its merits. Also the new CoDeKey (dual-role Compose/Dead Key).
 	- Become a Great Composer!
 
-WIPs: "Add Layout" functionality in GUI, to select multiple active layouts without editing files manually.
-	- Use the ComboBox functionality, that lets you have a DDL with a manually editable field on top.
-	- Use an Add button? The button adds layout, line becomes <lay1>, then add is grayed out until something's changed. Could I avoid an extra button?
-	- Or... a cheeky Join button that uses RegExReplace to merge the topmost two GUI override entries?! Too risky and error-prone for newbs.
-
 WIPs: In the Janitor timer: Update the OS dead keys and OEM VKs as necessary. Register current LID and check for changes.
 
 WIPs: Revisit the ISO key for several locale variants as the new Compose key is so powerful. Spanish? Probably not Scandi/German? Or?
@@ -141,11 +148,13 @@ WIPs: Make README.md for the main layout and layout variant folders, so they may
 	- This way, people may read, e.g., IndyRad/QI analysis on the GitHub page in Markdown rather than the unattractive comment-in-file format.
 	- Update correspondence between the Locale Forum topic and these pages: Link to EPKL in the topic, get info from the topic.
 
-WIPs: Mother-of-DKs (MoDK), e.g., on Extend tap! Near endless possibilities, especially if dead keys can chain.
+WIPs: Mother-of-DKs (MoDK), e.g., on Extend tap, has near endless possibilities – especially if dead keys can chain.
 	- MoDK idea: Tap Ext for chaining DK layer (e.g., {Ext,a,e} for e acute – é?). But how best to organize them? Mnemonically is not so ergonomic.
 
-WIPs: Dual-role modifiers. Allow home row modifiers like for instance Dusty from Discord uses: ARST and OIEN can be Alt/Win/Shift/Ctrl when held. Define both KeyDn/Up.
-	- In EPKL_Settings, set a tapOrModTapTime. In layout, use SC### = VK/ModName first entries. The key works normally when tapped, and the Mod is stored separately.
+WIPs: Dual-role modifiers, continued.
+	- Allow home row modifiers like for instance Dusty from Discord uses: ARST and OIEN can be Alt/Win/Shift/Ctrl when held. Define both KeyDn/Up.
+	- In EPKL_Settings, set a tapOrModTapTime. In layout, use SC### = VK/ModName first entries.
+		- The key works normally when tapped, and the Mod is stored separately.
 	- Redefine the dual-role Extend key as a generic tapOrMod key. Treating Extend fully as a mod, it can also be ToM (or sticky?).
 	- 2FIX: ToM-tap gets transposed when typing fast, the key is sluggish. But if the tap time is set too low, the key can't be tapped instead.
 		- To fix this, registered interruption. So if something is hit before the mod timer the ToM tap is handled immediately.
@@ -413,7 +422,12 @@ TODO: Look into this Github README template? https://github.com/Louis3797/awesom
 TODO: Make key presses involving the Win key send VK codes. This'll preserve Win+‹key› shortcuts without using ## mappings.
 TODO: Rework the GUI submit to allow multi-submit/reset on tabs that have more than one submit. 
 	- Maybe make the submit routine callable with arrays so it loops before asking for a restart?
-TODO: IPA Compose sequences, based on my old IPA DK ideas. Vowels with numbers according to position?
+TODO: A set of IPA dk, maybe on AltGr+Shift symbol keys? Based on my old IPA DK ideas. Could be chained from a MoDK? Or solved as composes.
+		- IPA Compose sequences? Vowels with numbers according to position?
+		- The Keyman solution, for inspiration: https://help.keyman.com/keyboard/sil_ipa/2.0.2/sil_ipa
+		- Vowel DKs: Front/mid/back, with capitalisation distinguishing unrounded vs rounded?
+		- Consonant DKs: Bilabial/labiodental/dental/alveolar/postalveolar, retroflex/palatal, velar/uvular, pharyngeal/glottal?
+			- If composing, use these letters then: `b l d a (pa) r p v u f g` for consonants, 1–6 for vowels?
 TODO: Make a "base compose output" that a Compose key releases whenever no sequence is recognized? Like the Basechar of a DK. Useful for locale layouts?
 TODO: Personal override files for extend, compose, powerstrings etc? One override file with sections? Some overrides (remaps, DKs) in layouts.
 TODO: Is the main README still too long? Put the layout tutorial in a Layouts README? Also make a tutorial for simply using the CkAWS remap or something.
@@ -506,7 +520,6 @@ TODO: Mirrored one-hand typing as Remap, Extend or other layer?
 	- Layout switching is usually done by restarting EPKL which is too clunky. But if we could have a switch modifier that temporarily activates the next layout...?
 	- This would require preloading more than one layout which takes a bit of reworking. Possibly... Allow an alt-set of the remap only, remapping on the fly w/ a mod?
 	- Mirroring as a remap can now use minicycles of many two-key loops. For instance, |  QU |  SC /  MN |  SL | for two separate swaps.
-TODO: A set of IPA dk, maybe on AltGr+Shift symbol keys? Could also be chained from a MoDK?
 TODO: Lose CompactMode from the Settings file. The LayStack should do it.
 	- Instead of a setting in Settings, allow all of the layout to reside in EPKL_Layouts_Default (or Override). If detected, use root images if available.
 	- If no Layout.ini is found, give a short Debug message on startup explaining that the root level default/override layout, if defined, will be used. Or just do it?
@@ -514,9 +527,18 @@ TODO: Lose CompactMode from the Settings file. The LayStack should do it.
 ;;  ================================================================================================================================================
 ;;  eD ONHOLD:
 
+HOLD: Pre-hoc Compose instead of post-hoc?
+	- This could help the CoDeKey avoid misunderstandings whenever accidentally typing a composeable sequence beforehand.
+		- However, how would the CoDeKey distinguish between composes and dead keys then?
+		- It'd probably need a "Compose-This" key: A mapping to the actual © key? But that'd be less smooth and efficient.
+
+HOLD: Should a stickyTime of 0 make sticky keys work like on Windows, without a timer?
+	- Can just use a long timer instead, for simplicity but also robustness (Shift isn't stuck on forever).
+
 HOLD: Unmapped and Disabled keys produce weird output, unless a « » prefix is used. Fix this?
 	- Problem: These keys are simply skipped in pkl_init. They'd need some kind of tag for the HIG to mark them specifically.
-	- What to use? Nothing, or some marking? For now, it's probably okay to leave this issue to the « » HIG tag.
+	- What to use? Nothing, or some marking? For now, it's probably okay to leave this issue to the «» HIG tag.
+	- There's a similar issue with DK entries unmapped with `--`.
 
 HOLD: Now that we have ortho layout images, how about a really compact version?
 	- Technically, it'd be easily to use the existing ortho template and just use a smaller export area for "OrthCpt" GeoType.

@@ -5,11 +5,11 @@
 
 keyPressed( HKey ) { 											; Executes a HotKey press – the actual processing part
 	Critical 													; Not all of this fn can have Critical priority, it seems: Hard hangs occurred when trying that.
-	vk_HK := getKeyInfo( HKey . "ent1" ) 						; Key "VK_" info; usually VK/SC code.
+	kc_HK := getKeyInfo( HKey . "ent1" ) 						; Key "VK_" info; usually VK/SC code.
 	capHK := getKeyInfo( HKey . "ent2" ) 						; CapsState (0-5 as MSKLC; -1 Mod; -2 VK; -3 SC)
 	
 	If ExtendIsPressed() {  									; If there is an Extend key and it's pressed...
-		_osmClearAll()  										; ...clear any sticky mods, then...
+		osmClearAll()   										; ...clear any sticky mods, then...
 		extendKeyPress( HKey )  								; ...process the Extend key press.
 		Return
 	}   ; <-- if ExtPressed
@@ -17,27 +17,27 @@ keyPressed( HKey ) { 											; Executes a HotKey press – the actual process
 	If ( capHK < -1 ) { 										; The key is VK or SC mapped, so just send its VK## and/or SC### code.
 		If ( capHK == -2 ) && inArray( [ "VK2D", "VK2E"  		; [PgUp,PgDn,End ,Home,Left,Up ,Right,Down,Ins ,Del ] are sent as their NumPad versions by AHK, as...
 				, "VK21", "VK22", "VK23", "VK24"    			; [VK21,VK22,VK23,VK24,VK25,VK26,VK27,VK28,VK2D,VK2E] are degenerate VK codes for both versions
-				, "VK25", "VK26", "VK27", "VK28" ], vk_HK ) { 	; [049 ,051 ,04F ,047 ,04B ,048 ,04D ,050 ,052 ,053 ] are the NumPad SCs for the keys
-			SC  := GetKeySC(vk_HK) | 0x100  					; [149 ,151 ,14F ,147 ,14B ,148 ,14D ,150 ,152 ,153 ] are the normal SCs for the keys
-			vk_HK .= Format( "SC{:03X}", SC )   				; Send {vk##sc###} ensures that the normal key version is sent
+				, "VK25", "VK26", "VK27", "VK28" ], kc_HK ) { 	; [049 ,051 ,04F ,047 ,04B ,048 ,04D ,050 ,052 ,053 ] are the NumPad SCs for the keys
+			SC  := GetKeySC(kc_HK) | 0x100  					; [149 ,151 ,14F ,147 ,14B ,148 ,14D ,150 ,152 ,153 ] are the normal SCs for the keys
+			kc_HK .= Format( "SC{:03X}", SC )   				; Send {vk##sc###} ensures that the normal key version is sent
 		}   ; <-- if capHK == VK
 		delQStr := "VK1B-SC001" . "VK0D-SC01C"  				; Keys that wipe the LastKeys queue: Esc(1B), Enter(0D), 
 				.  "VK2E-SC153" . "VK09-SC00F"  				;                                    Del(2E), Tab(09; not usually mapped)   	; eD WIP: Some Extend mappings too?
-		If        InStr( "VK08-SC00E", vk_HK ) { 				; Backspace was pressed, so...
+		If        InStr( "VK08-SC00E", kc_HK ) { 				; Backspace was pressed, so...
 			If getKeyState( "Ctrl" ) {
 				lastKeys( "null" )  							; ...unless it was Ctrl+Back,...
 			} else {
 				lastKeys( "pop1" )  							; ...remove the last entry in the Composer LastKeys queue
 			}
-		} else if InStr( delQStr    , vk_HK ) { 				; SpecialKey was pressed, so...
-			lastKeys( "null" )  								; ...delete the Composer LastKeys queue.
+		} else if InStr( delQStr    , kc_HK ) { 				; SpecialKey was pressed, so...
+			lastKeys( "null" )  								; ...delete the Composer LastKeys queue. NOTE: Some special keys like Tab may be left Unmapped to work better.
 		} else {
-			_composeVK( HKey, vk_HK )   						; If the output is a single, printable character, add it to the Compose queue
+			_composeVK( HKey, kc_HK )   						; If the output is a single, printable character, add it to the Compose queue
 		}
-;		If inArray( [ "SC002","SC003","SC004" ], HKey )
-;			pklTooltip( HKey . " " . capHK ), Return 	; eD DEBUG
-		Send {Blind}{%vk_HK% DownR} 							; Send the down press as DownR so other Send won't be affected, like AHK remaps.
-		_osmClearAll()  										; Clear any sticky mods after sending
+;		If inArray( [ "SC001","SC01C","SC153", "SC00F" ], HKey )
+;			pklTooltip( "HKey kc_HK capHK: " HKey " " kc_HK " " capHK ), Return 	; eD DEBUG
+		Send {Blind}{%kc_HK% DownR} 							; Send the down press as DownR so other Send won't be affected, like AHK remaps.
+		osmClearAll()   										; Clear any sticky mods after sending
 		Return
 	}   ; <-- if VK/SC
 																; The part below might be a separate fn, e.g., sendKeyWithMods( HKey, CapHK )
@@ -95,8 +95,8 @@ keyPressed( HKey ) { 											; Executes a HotKey press – the actual process
 		If pkl_ParseSend( Pri . Ent, "SendThis" )   			; Unified prefix-entry syntax
 			Return  											; Skip osmClearAll in this case
 	}   ; <-- if Pri
-	_osmClearAll()  											; If another key is pressed while a OSM is active, cancel the OSM
-}   ; <-- fn keyPressed 										; eD WIP: Should _osmClearAll() be used more places above?
+	osmClearAll()   											; If another key is pressed while a OSM is active, cancel the OSM
+}   ; <-- fn keyPressed 										; eD WIP: Should osmClearAll()  be used more places above?
 
 extendKeyPress( HKey ) {    									; Process an Extend modified key press
 	Critical
@@ -149,13 +149,13 @@ setExtendInfo( xLvl := 1 ) {    								; Update PKL info about the current Exte
 	setLayInfo( "extendImg", getLayInfo( "extImg" . xLvl ) )
 }
 
-_composeVK( HKey, vk_HK ) { 									; If the output is a single, printable character, add it to the Compose queue
+_composeVK( HKey, kc_HK ) { 									; If the output is a single, printable character, add it to the Compose queue
 	static skipForDK    := false
 	If skipForDK {  											; If the previous key press was an OS DK, skip the next press too to allow its release.
 		skipForDK       := false
 		Return
 	}
-	iVK := Format( "{:i}", "0x" . SubStr( vk_HK, 3, 2 ) )   	; VK as int should be robust for vk##sc### mappings. GetKeyName/VK messes w/ OS DKs; don't.
+	iVK := Format( "{:i}", "0x" . SubStr( kc_HK, 3, 2 ) )   	; VK as int should be robust for vk##sc### mappings. GetKeyName/VK messes w/ OS DKs; don't.
 	key := dllMapVK( iVK, "chr" )   							; GetKeyName() returns the base (unshifted) key name. We use a DLL call to avoid it here.
 	If ( StrLen(key) == 1 ) {   								; Normal letters/numbers/symbols are single-character
 		iSC := Format( "{:i}", "0x" . SubStr( HKey, 3 ) )   	; This should be okay, as KeyUp events don't get processed here? Just pure SC###.
@@ -209,11 +209,15 @@ getModState( theMod ) { 									; This is needed for virtual modifiers. Returns
 	Return getKeyInfo( "ModState_" . theMod )   			; Physical ones are simply depressed in _setModState().
 }
 
-setOneShotMod( theMod ) {   								; Activate a One-Shot Mod (OSM).
+setOneShotMod( theMod := 0 ) {  							; Activate a One-Shot Mod (OSM). Use 0 to clear all OSMs.
 	Critical
 ;	( theMod == "Shift" ) ? pklDebug( "OSM " . theMod, 0.3 )  ; eD DEBUG 	; eD WIP
 	static osmN := 0    									; OSM number counter
 	
+	if ( theMod == 0 ) {
+		osmClearAll()
+		Return
+	}
 	osmTime := getPklInfo( "stickyTime" )   				; StickyMod/OSM wait time
 	osmN    := Mod( osmN, getPklInfo("osmMax") )+1  		; Switch between the OSM timers to allow multiple concurrent OSMs
 	setPklInfo( "osmN"          , osmN   )
@@ -232,13 +236,12 @@ _osmClear( osmN ) { 										; Clear a specified sticky mod
 		setModifierState( theMod, 0 )   					; Release the modifier
 }
 
-_osmClearAll() {    										; Clear all active sticky mods
+osmClearAll() { 											; Clear all active sticky mods
 	Critical
 	Loop % getPklInfo( "osmMax" ) {
 		If ( getPklInfo( "osmKeyN" . A_Index ) != "" )
 			_osmClear( A_Index )
 	}
-;	( 1 ) ? pklDebug( "OSMs cleared", 0.3 )  ; eD DEBUG  	; eD WIP: Doesn't this get called after all?
 }
 
 AltGrIsPressed() {  										; Used in pkl_keypress and pkl_gui_image
@@ -296,7 +299,7 @@ _setExtendState( set := 0 ) {   							; Called from setModState. This function 
 		initialized     := true
 	}
 	
-;	_osmClearAll() 											; eD WIP: Don't mix ToM and Extend? Nope, this didn't work and landed us with a stuck Caps key!
+;	osmClearAll()   										; eD WIP: Don't mix ToM and Extend? Nope, this didn't work and landed us with a stuck Caps key!
 	If ( set == 1 ) && ( ! extHeld ) { 						; Determine multi-Extend layer w/ extMods
 		xLvl  := getKeyState( extMod1, "P" ) ? 2 : 1 		; ExtMod1 -> ExtLvl +1
 		xLvl  += getKeyState( extMod2, "P" ) ? 2 : 0 		; ExtMod2 -> ExtLvl +2

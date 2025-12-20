@@ -22,7 +22,7 @@
     - That is, my many layout mods and tweaks and bells and whistles. 
 * It's mostly centered around the brilliant Colemak keyboard layout,…
 * … with or without my own `[eD]` AltGr layers and dead keys,…
-* … **ergonomic mods** both for **Colemak**, the **Tarmak** learning layouts and **other layouts**,…
+* … **ergonomic mods** both for [**Colemak**][CmkCom], the [**Tarmak**][BBTtmk] learning layouts and **other layouts**,…
 * … and the incredibly useful [**Extend**][BBText] layers which work with any layout.
 * **DreymaR's Big Bag of Keyboard Tricks** at [**dreymar.colemak.org**][orgBBT] is my main info site.
     - On those pages, you can choose the Windows (flag icon) platform to see more about EPKL/Windows.
@@ -82,7 +82,7 @@ If you find my info below and on the Big Bag pages too daunting and massive, do 
 
 External guides may not be fully updated to show everything the Layout/Settings menu can do for instance! So do try that, too.
 The Settings dialog holds some useful info points for each tab, and the KeyMapper tab has its own Help button.
-<br>
+<br><br>
 
 ![EPKL layout dialog](./Other/Docs/EPKL_Layout-UI.png)
 
@@ -170,9 +170,8 @@ QWCLK = Extend  	Mod 		; SC03a: CapsLock as the Extend modifier
 ```
 - Add a semicolon before the line you don't want, and remove the one before the line you do want to use.
 - Note the bottom line there? You can actually have both: Backspace on tapping <kbd>Caps</kbd>, Extend on holding it!
-- It's actually the default setting for the KeyMapper tab of the Layout/Settings dialog. Press the Submit button and you're on.
-<br>
-    - … in the [Layouts Default file][LayDef] find the first `;QWCLK = BACK` etc line and remove that semicolon …
+- That's actually the default setting for the KeyMapper tab of the Layout/Settings dialog. Press button below and you're on:
+<br><br>
 
 ![EPKL settings dialog](./Other/Docs/EPKL_Settings-UI.png)
 
@@ -606,6 +605,7 @@ _Øystein "DreymaR" Bech-Aase_
 [CmkOrg]: https://www.colemak.org (The Colemak Community site)
 [orgBBT]: https://dreymar.colemak.org/ (DreymaR's Big Bag of Keyboard Tricks)
 [BBText]: https://dreymar.colemak.org/layers-extend.html (about Extend, in DreymaR's Big Bag of Keyboard Tricks)
+[BBTtmk]: https://dreymar.colemak.org/tarmak-intro.html  (about Tarmak, in DreymaR's Big Bag of Keyboard Tricks)
 [BBTawi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide (about the Angle/Wide ergo mods, in DreymaR's Big Bag of Keyboard Tricks)
 [BBT_eD]: https://dreymar.colemak.org/layers-colemaked.html (about Colemak-eD layers, in DreymaR's Big Bag of Keyboard Tricks)
 [BBTseq]: https://dreymar.colemak.org/layers-main.html#sequences (about sequencing vs chording modifiers)
