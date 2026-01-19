@@ -1,12 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br><br>
+<h1 align=center line-height=1.6>Sturdy</h1><br><br>
 
-![Sturdy Angle-ANSI help image](./Sturdy_ANS-A_EPKL.png)
-
-_The default Sturdy layout (using the Angle mod) on an ANSI keyboard_
-
-<br><br>
+<div align=center ><img src="./Sturdy_ANS-A_EPKL.png" 
+                        alt="The Sturdy layout w/ the Angle mod on an ANSI keyboard"></div><br>
 
 The Sturdy layout
 -----------------
@@ -122,21 +117,26 @@ _The Sturdy-AWS-ISO layout. The © key can be a Compose key, or whatever you wis
 
 _The Sturdy-AWS-ANSI layout. Note the changed J and Z positions._
 
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
+
 <br><br>
 
 ![Sturdy layout image from its web site](./_Res/Sturdy_Web.png)
 
 _The Sturdy layout. Image taken from its own [homepage][LayHom]._
 
-<br>
+<br><br>
 
-![Oxey profile logo](./_Res/Oxey_GitHub.png)
+<div align=center ><img src="./_Res/Oxey_GitHub.png" 
+                        alt="Oxey's profile logo"></div>
 
 
-[LayHom]: https://o-x-e-y.github.io/layouts/sturdy/                 (The Sturdy layout home page)
-[AnaHom]: https://github.com/O-X-E-Y/oxeylyzer                      (The Oxeylyzer layout analyzer home page)
-[GraPKL]: /Layouts/Graphite/                                        (The Graphite layout in EPKL)
-[GalPKL]: /Layouts/Gallium/                                         (The Gallium layout in EPKL)
-[ErgAWi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide     (DreymaR's BigBag on Angle+Wide ergo mods)
-[ErgCrl]: https://dreymar.colemak.org/ergo-mods.html#curl-dh        (DreymaR's BigBag on the Curl-DH ergo mod)
-[ErgSym]: https://dreymar.colemak.org/ergo-mods.html#symbols        (DreymaR's BigBag on the Symbols ergo mod)
+[LayHom]: https://o-x-e-y.github.io/layouts/sturdy/                                     (The Sturdy layout home page)
+[AnaHom]: https://github.com/O-X-E-Y/oxeylyzer                                          (The Oxeylyzer layout analyzer home page)
+[GalPKL]: /Layouts/Gallium#gallium                                                      (The Gallium layout in EPKL)
+[GraPKL]: /Layouts/Graphite#graphite                                                    (The Graphite layout in EPKL)
+[ErgAWi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide                         (DreymaR's BigBag on Angle+Wide ergo mods)
+[ErgCrl]: https://dreymar.colemak.org/ergo-mods.html#curl-dh                            (DreymaR's BigBag on the Curl-DH ergo mod)
+[ErgSym]: https://dreymar.colemak.org/ergo-mods.html#symbols                            (DreymaR's BigBag on the Symbols ergo mod)

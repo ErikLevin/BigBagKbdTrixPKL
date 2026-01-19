@@ -1,10 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br>
+<h1 align=center line-height=1.6>QWERTY</h1><br><br>
 
-![QWERTY help image, ANSI](./QWERTY_ANS_EPKL.png)
-
-<br>
+<div align=center ><img src="./QWERTY_ANS_EPKL.png" 
+                        alt="QWERTY help image on an ANSI keyboard"></div><br>
 
 Þe Olde QWERTY Layout
 ---------------------
@@ -21,3 +18,7 @@ DreymaR's Big Bag Of Keyboard Tricks - EPKL
 <br>
 
 _This image shows some EPKL possibilities: Angle/Wide/Sym ergo mods, and a Compose key in the middle of an ISO keyboard._
+
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>

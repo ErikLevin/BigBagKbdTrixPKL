@@ -1,12 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br><br>
+<h1 align=center line-height=1.6><<NewLayout>></h1><br><br>
 
-![<<NewLayout>> Angle-ANSI help image](./<<NewLayout>>_ANS-A_EPKL.png)
-
-_The default <<NewLayout>> layout (using the Angle mod) on an ANSI keyboard_
-
-<br><br>
+<div align=center ><img src="./<<NewLayout>>_ANS-A_EPKL.png" 
+                        alt="The default <<NewLayout>> layout (using the Angle mod) on an ANSI keyboard"></div><br>
 
 The <<NewLayout>> layout
 --------------------
@@ -74,9 +69,14 @@ The <<NewLayout>> layout
 
 _The <<NewLayout>>-(C)AWS-ISO layout. The © key can be a Compose key, or whatever you wish._
 
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
+
 <br><br>
 
-![<<NewLayout>> logo](./_Res/<<NewLayout>>Logo.png)
+<div align=center ><img src="./_Res/<<NewLayout>>Logo.png" 
+                        alt="<<NewLayout>> logo"></div>
 
 
 [LayGit]: https://github.com/<<Creator>>/<<NewLayout>> (The <<NewLayout>> layout on GitHub)

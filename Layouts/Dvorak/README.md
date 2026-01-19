@@ -1,12 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br>
+<h1 align=center line-height=1.6>Dvorak</h1><br><br>
 
-![EPKL help image for Dvorak-AWide on an ANSI board](./_Res/Dvorak_ANS-AWide_EPKL.png)
-
-_The Dvorak layout with [Angle+Wide ergonomic mods][BB_AWi] on an ANSI board_
-
-<br>
+<div align=center ><img src="./_Res/Dvorak_ANS-AWide_EPKL.png" 
+                        alt="The Dvorak layout w/ Angle+Wide ergo mods on an ANSI keyboard"></div><br>
 
 The Dvorak layout
 -----------------
@@ -92,9 +87,13 @@ The Boo Layout
 - The Boo layout keeps several keys from Dvorak, notably AOE and the right-hand punctuation keys.
 - Other similarities and improvements are discussed in the Boo layout README.
 
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
+
 
 [BB_Erg]: https://dreymar.colemak.org/ergo-mods.html                (DreymaR's Big Bag of Tricks on ergo mods)
 [BB_AWi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide     (DreymaR's Big Bag of Tricks on Angle+Wide ergo mods)
 [BB_CAW]: https://dreymar.colemak.org/ergo-mods.html#curl-dh        (DreymaR's Big Bag of Tricks on the Curl-DH ergo mod)
 [PrgDvk]: https://www.kaufmann.no/roland/dvorak/                    (Programmer Dvorak, by Roland Kaufmann)
-[BooLay]: /Layouts/Boo/                                             (The Boo layout in EPKL)
+[BooLay]: /Layouts/Boo#boo                                          (The Boo layout in EPKL)

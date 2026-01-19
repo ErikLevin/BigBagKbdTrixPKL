@@ -1,25 +1,22 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br><br>
+<h1 align=center line-height=1.6>Gallium</h1><br><br>
 
-![Gallium Ortho help image](./Gallium-v1_Orth-Cpt_EPKL.png)
+<div align=center ><img src="./Gallium-v1_Orth-Cpt_EPKL.png" 
+                        alt="The Gallium "v1" layout on an Ortho keyboard"></div><br>
 
-_The Gallium "v1" layout on an Ortho keyboard_
-
-<br><br>
+<p align="center"><i>See also my <a href="../Gralmak#gralmak">Gralmak</a></i> Graphite-Gallium variant</p><br>
 
 The Gallium layout
 ------------------
 - This layout was made by Bryson James alias 'GalileoBlues', 2022-12.
 - It may be said to use the [**Curl**][ErgCrl] principle, by reducing lateral stretches to the middle home row positions.
 - An [**Angle**][ErgAWi] ergo mod is recommended for this layout on row-staggered boards.
-- For more info, see [the Gallium repo on GitHub][GalGit].
 - Gallium is similar to other recent layouts, like [Nerps (by Smudge)][NrpRed] and [Graphite (by strongly-typed)][GraGit].
 - It is, in fact, amazing how Gallium and [Graphite][GraPKL] are virtually the same layout, albeit developed independently!
 - I like that Gallium has J and a symbol in the same positions as Colemak's top row.
 - Some bigrams like `SC`, albeit same-finger, are nicely altable on Gallium.
 - Both Bryson and I favor the v2/"Rowstag" version, used in the BaseLayout. Getting to the Colstag version is a simple remap.
 - The `PHY` trigram is better alt-fingerable on the Rowstag version.
+- For more info, see [the Gallium repo on GitHub][GalGit].
 <br>
 
 ![Gallium Angle-ANSI help image](./Gallium_ANS-A_EPKL.png)
@@ -102,7 +99,7 @@ Galliard
 --------
 - Out of interest, I wanted to make a mod variant with traditional symbol/punctuation placements.
 - Thus came about the "Galliard" variant that's easily ergo modified like, e.g., Colemak-CAWS.
-- In this variant, I also kept the Q-X arrangement, as discussed above. [ZXMCV is tempting though.][Gralmk]
+- In this variant, I also kept the Q-X arrangement, as discussed above. [ZXMCV is tempting though.][GmkPKL]
 - The name is a play on "Gallium", but it's also a Renaissance dance. "Galliard" means "brisk, lively".
 <br><br>
 
@@ -131,12 +128,16 @@ _The Galliard layout variant on an Ortho keyboard_
 - The `O'` bigram is better this way, but the more common `I'` bigram is worse. Using a CoDeKey solves that.
 - The `YOU'` tetragram is actually an outward roll on Galliard, albeit with a lateral stretch. Whee!
 - I asked GalileoBlues on his [Gallium repo on GitHub][GalIs5], and got a go for publishing this variant.
-- Also see the README for the similar [Gralmak][Gralmk] Graphite variant.
+- Also see the README for the similar [Gralmak][GmkPKL] Graphite variant.
 <br>
 
 ![Gallium (C)AWS-ISO help image](./Gallium_ISO-AWS_EPKL.png)
 
 _The Gallium-(C)AWS-ISO "Galliard" layout. The © key can be a Compose key, or whatever you wish._
+
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
 
 <br><br>
 
@@ -145,14 +146,22 @@ _The Gallium-(C)AWS-ISO "Galliard" layout. The © key can be a Compose key, or w
 _The Gallium layout, v2/"Rowstag" version. Image taken from its own [web page][GalGit]._
 
 
-[GalGit]: https://github.com/GalileoBlues/Gallium#gallium                               (The Gallium layout on GitHub)
-[GraGit]: https://github.com/rdavison/graphite-layout#graphite-keyboard-layout          (The Graphite layout on GitHub)
-[NrpRed]: https://www.reddit.com/r/KeyboardLayouts/comments/tpwyjc/                     (The Nerps layout on Reddit)
-[GraPKL]: /Layouts/Graphite/                                                            (The Graphite layout in EPKL)
-[Gallrd]: #galliard                                                                     (The Galliard Gallium layout variant)
-[Gralmk]: /Layouts/Graphite/README.md#gralmak                                           (The Gralmak Graphite layout variant)
 [GalIs5]: https://github.com/GalileoBlues/Gallium/issues/5                              (GitHub issue on adding Gallium to EPKL)
+
+[GraGit]: https://github.com/rdavison/graphite-layout#graphite-keyboard-layout          (The Graphite layout on GitHub)
+[GalGit]: https://github.com/GalileoBlues/Gallium#gallium                               (The Gallium layout on GitHub)
+[GrlGit]: https://github.com/DreymaR/Gralmak#gralmak                                    (The Gralmak layout on GitHub)
+[Sturdy]: https://oxey.dev/sturdy/                                                      (The Sturdy layout's home page)
+[NrpRed]: https://www.reddit.com/r/KeyboardLayouts/comments/tpwyjc/                     (The Nerps layout on Reddit)
+[CmkPKL]: /Layouts/Colemak#colemak                                                      (The Colemak layout in EPKL)
+[StrPKL]: /Layouts/Sturdy#sturdy                                                        (The Sturdy layout in EPKL)
+[GalPKL]: /Layouts/Gallium#gallium                                                      (The Gallium layout in EPKL)
+[Gallrd]: /Layouts/Gallium#galliard                                                     (The Galliard Gallium layout variant in EPKL)
+[GraPKL]: /Layouts/Graphite#graphite                                                    (The Graphite layout in EPKL)
+[GmkPKL]: /Layouts/Gralmak#gralmak                                                      (The Gralmak Graphite layout variant in EPKL)
 [ErgAWi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide                         (DreymaR's BigBag on Angle+Wide ergo mods)
 [ErgCrl]: https://dreymar.colemak.org/ergo-mods.html#curl-dh                            (DreymaR's BigBag on the Curl-DH ergo mod)
 [ErgSym]: https://dreymar.colemak.org/ergo-mods.html#symbols                            (DreymaR's BigBag on the Symbols ergo mod)
-[CoDeKy]: https://github.com/DreymaR/BigBagKbdTrixPKL/blob/master/README.md#advanced-composecodekey  (The EPKL README on the CoDeKey)
+[BBTseq]: https://dreymar.colemak.org/layers-main.html#sequences                        (DreymaR's BigBag on sequencing)
+[BBTtmk]: https://dreymar.colemak.org/tarmak-intro.html                                 (DreymaR's Big Bag on Tarmak transitions)
+[CoDeKy]: https://github.com/DreymaR/BigBagKbdTrixPKL/blob/master/README.md#advanced-composecodekey (The EPKL README on the CoDeKey)

@@ -1,12 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br><br>
+<h1 align=center line-height=1.6>APT</h1><br><br>
 
-![APTv3 Angle-ANSI help image](./APTv3_ANS-A_EPKL.png)
-
-_The APTv3 layout (using the Angle mod) on an ANSI keyboard_
-
-<br><br>
+<div align=center ><img src="./APTv3_ANS-A_EPKL.png" 
+                        alt="The APTv3 layout w/ the Angle mod on an ANSI keyboard"></div><br>
 
 The APT layout
 --------------
@@ -88,9 +83,14 @@ The [**S**ym(bol)][ErgSym] mod should have <kbd>'</kbd> and <kbd>-</kbd> in good
 
 _The APT-(C)AWS-ISO layout. The © key can be a Compose key, or whatever you wish._
 
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
+
 <br><br>
 
-![Apsu logo](./_Res/Apsu_GitHub.jpg)
+<div align=center ><img src="./_Res/Apsu_GitHub.jpg" 
+                        alt="Apsu's logo"></div>
 
 
 [APTGit]: https://github.com/Apsu/APT                           (The APTv3 layout on GitHub)

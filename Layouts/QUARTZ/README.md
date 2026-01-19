@@ -1,10 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br>
+<h1 align=center line-height=1.6>QUARTZ</h1><br><br>
 
-![QUARTZ help image](./QUARTZ_ISO_EPKL.png)
-
-<br>
+<div align=center ><img src="./QUARTZ_ISO_EPKL.png" 
+                        alt="The QUARTZ layout, rocking an ISO keyboard"></div><br>
 
 The rock solid QUARTZ Perfect Pangram layout
 --------------------------------------------
@@ -15,10 +12,16 @@ The rock solid QUARTZ Perfect Pangram layout
 <br>
 
 ￣(=⌒ᆺ⌒=)￣
+
 <br>
 
 ![QUARTZ help image with finger coloring, ANSI board](./QUARTZ_ANS_EPKL-FShui.png)
 
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
+
+
 [WikPan]: https://en.wikipedia.org/wiki/Pangram (Wikipedia on pangrams)
-[LayFoa]: /Layouts/Foalmak                                          (The Foalmak layout in EPKL)
-[LayQua]: /Layouts/QUARTZ                                           (The QUARTZ layout in EPKL)
+[LayFoa]: /Layouts/Foalmak#foalmak                                  (The Foalmak layout in EPKL)
+[LayQua]: /Layouts/QUARTZ#quartz                                    (The QUARTZ layout in EPKL)

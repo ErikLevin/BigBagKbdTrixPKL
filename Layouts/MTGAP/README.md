@@ -1,11 +1,7 @@
-DreymaR's Big Bag Of Keyboard Tricks - EPKL
-===========================================
-<br>
+<h1 align=center line-height=1.6>MTGAP</h1><br><br>
 
-![EPKL help image for MTGAP-AngleSym on an ISO board](./MTGAP_ISO-AS_EPKL.png)
-
-_The MTGAP layout with the [Angle and Sym ergonomic mods][BB_Erg] on an ISO board_
-<br><br>
+<div align=center ><img src="./MTGAP_ISO-AS_EPKL.png" 
+                        alt="The MTGAP layout w/ Angle and Sym ergo mods, on an ISO keyboard"></div><br>
 
 The MTGAP layout
 ----------------
@@ -48,6 +44,10 @@ alternation (notice the positions of TH, NE, ST and the fairly unusual feature o
 |![EPKL help image for shifted MTGAP on an ANSI board](./MTG-eD_ANS/state1.png)|
 |   :---:   |
 |_Shifted MTGAP help image on an ANSI board_|
+
+<br>
+
+<h1 align=center>⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨&nbsp;&nbsp;&nbsp;⌨</h1>
 
 
 [MTGAPm]: https://mathematicalmulticore.wordpress.com/the-keyboard-layout-project/ (The MTGAP project)
