@@ -152,7 +152,7 @@ Gralmak
 -------
 - I wanted to make a Graphite variant with traditional symbol/punctuation placements.
 - Thus came about the **Gralmak** variant that's easily ergo modified like, e.g., Colemak-CAWS.
-- For more info, see the [Gralmak layout folder][GmkPKL] and [the Gralmak repository][GrlGit].
+- For more info, see the [Gralmak layout folder][GmkPKL] and [the Gralmak repository][GmkGit].
 <br><br>
 
 ![Gralmak Ortho help image](../Gralmak/Gralmak_Orth-Cpt_EPKL.png)
@@ -189,7 +189,7 @@ _The Graphite layout, as depicted on its own [web page][GraGit]._
 
 [GraGit]: https://github.com/rdavison/graphite-layout#graphite-keyboard-layout          (The Graphite layout on GitHub)
 [GalGit]: https://github.com/GalileoBlues/Gallium#gallium                               (The Gallium layout on GitHub)
-[GrlGit]: https://github.com/DreymaR/Gralmak#gralmak                                    (The Gralmak layout on GitHub)
+[GmkGit]: https://github.com/DreymaR/Gralmak#gralmak                                    (The Gralmak layout on GitHub)
 [Sturdy]: https://oxey.dev/sturdy/                                                      (The Sturdy layout's home page)
 [NrpRed]: https://www.reddit.com/r/KeyboardLayouts/comments/tpwyjc/                     (The Nerps layout on Reddit)
 [CmkPKL]: /Layouts/Colemak#colemak                                                      (The Colemak layout in EPKL)
@@ -201,6 +201,6 @@ _The Graphite layout, as depicted on its own [web page][GraGit]._
 [ErgAWi]: https://dreymar.colemak.org/ergo-mods.html#angle-wide                         (DreymaR's BigBag on Angle+Wide ergo mods)
 [ErgCrl]: https://dreymar.colemak.org/ergo-mods.html#curl-dh                            (DreymaR's BigBag on the Curl-DH ergo mod)
 [ErgSym]: https://dreymar.colemak.org/ergo-mods.html#symbols                            (DreymaR's BigBag on the Symbols ergo mod)
-[BBTseq]: https://dreymar.colemak.org/layers-main.html#sequences                        (DreymaR's BigBag on sequencing)
+[BBTseq]: https://dreymar.colemak.org/layers-main.html#sequencing                       (DreymaR's BigBag on sequencing)
 [BBTtmk]: https://dreymar.colemak.org/tarmak-intro.html                                 (DreymaR's Big Bag on Tarmak transitions)
 [CoDeKy]: https://github.com/DreymaR/BigBagKbdTrixPKL/blob/master/README.md#advanced-composecodekey (The EPKL README on the CoDeKey)
